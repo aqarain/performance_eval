@@ -1,20 +1,25 @@
 import { performance } from 'perf_hooks';
 
-export const calcTime = (cb: Function) => {
-  console.time('Console.time Results');
+export const calcTime = (cb: Function, name: string = 'Test Function') => {
+  console.log('⏳⏳ Running console.time....');
+  console.time(`${name} took`);
   cb();
-  console.timeEnd('Console.time Results');
+  console.timeEnd(`${name} took`);
 };
 
-export const calcPerformance = (cb: Function) => {
+export const calcPerformance = (
+  cb: Function,
+  name: string = 'Test Function'
+) => {
+  console.log('⏳⏳ Running Performance.now....');
   const start = performance.now();
   cb();
   const end = performance.now();
-  console.log(`Performance.now Results: ${end - start}ms`);
+  console.log(`${name} took: ${end - start}ms`);
 };
 
 export const comparePerformance = (fnOne: Function, fnTwo: Function) => {
-  console.log('⏳⏳Comparing two functions....');
+  console.log('⏳⏳ Comparing two functions....');
 
   const start1 = performance.now();
   fnOne();

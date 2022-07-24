@@ -1,9 +1,10 @@
 import { calcTime, calcPerformance } from './utils/calcTime';
-import { testFnOne, testFnTwo, warmupFn } from './testingFn';
+import { testFnOne, testFnTwo } from './testingFn';
 import { compareTwoFn } from './utils/compareTwoFn';
+import { warmupFn } from './utils/warmUpFn';
 
 // warm up function - must run always
-calcTime(warmupFn);
+calcTime(warmupFn, 'Warmup function');
 
 // for single function
 calcTime(testFnTwo);
