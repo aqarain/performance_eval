@@ -1,26 +1,19 @@
+const runIterations = (valueA: number, valueB: number) => {
+  for (let i = 0; i < 1e6; ++i) {
+    [valueA, valueB] = [valueB, valueA];
+  }
+};
+
 export const warmupFn = () => {
-  let valueA = 10,
-    valueB = 20;
-
-  for (let i = 0; i < 1e6; ++i) {
-    [valueA, valueB] = [valueB, valueA];
-  }
+  runIterations(1, 2);
 };
 
+// Paste your first function here in testFnOne
 export const testFnOne = () => {
-  let valueA = 10,
-    valueB = 20;
-
-  for (let i = 0; i < 1e6; ++i) {
-    [valueA, valueB] = [valueB, valueA];
-  }
+  runIterations(3, 4);
 };
 
+// Paste your second function here in testFnTwo
 export const testFnTwo = () => {
-  let valueA = 1,
-    valueB = 2;
-
-  for (let i = 0; i < 1e6; ++i) {
-    [valueA, valueB] = [valueB, valueA];
-  }
+  runIterations(5, 6);
 };
